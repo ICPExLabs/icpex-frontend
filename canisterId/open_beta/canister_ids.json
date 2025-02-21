@@ -1,0 +1,23 @@
+{
+  "icpl_backend": {
+    "ic": "eirfr-hyaaa-aaaag-acapa-cai"
+  },
+  "icpl_faucet": {
+    "ic": "epqdf-kaaaa-aaaag-acapq-cai"
+  },
+  "icpl_icpl": {
+    "ic": "egtiz-4iaaa-aaaag-acaoa-cai"
+  },
+  "icpl_oracle": {
+    "ic": "buk7u-mqaaa-aaaag-acaqq-cai"
+  },
+  "icpl_router": {
+    "ic": "euv7a-qyaaa-aaaag-acana-cai"
+  },
+  "icpl_transactions": {
+    "ic": "etuzu-5aaaa-aaaag-acanq-cai"
+  },
+  "icpl_starter_assets": {
+    "ic": "b5jui-2yaaa-aaaag-acara-cai"
+  }
+}

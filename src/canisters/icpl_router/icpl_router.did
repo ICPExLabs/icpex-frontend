@@ -1,0 +1,118 @@
+type Account = record { owner : principal; subaccount : opt vec nat8 };
+type PoolInfo = record {
+  i : nat;
+  k : nat;
+  base_reserve : nat;
+  owner : principal;
+  block_timestamp_last : nat64;
+  pool_addr : principal;
+  lp_amount : nat;
+  pool_type : text;
+  lp_lock : nat;
+  quote_user : nat;
+  lp_fee_rate : nat;
+  base_token_decimals : nat8;
+  quote_token_decimals : nat8;
+  base_user : nat;
+  quote_token : principal;
+  base_price_cumulative_last : nat;
+  quote_reserve : nat;
+  base_token : principal;
+  pool_status : PoolStatus;
+  mt_fee_rate : nat;
+  is_single_pool : bool;
+  total_supply : nat;
+  is_my_pool : bool;
+};
+type PoolStatus = variant {
+  CREATE_BASE_INPUT;
+  CREATE_QUOTE_INPUT;
+  OFFLINE;
+  ROLLBACK_UNDONE;
+  CREATED;
+  ROLLBACK_DONE;
+  ONLINE;
+};
+type RState = variant { ONE; AboveOne; BelowOne };
+type Result = variant { Ok : record { principal; nat }; Err : text };
+type Result_1 = variant { Ok : float32; Err : text };
+type Result_2 = variant { Ok; Err : text };
+type Result_3 = variant { Ok : nat; Err : text };
+type Result_4 = variant {
+  Ok : record { nat; vec principal; nat8; nat; nat };
+  Err : text;
+};
+type Result_5 = variant { Ok : nat64; Err : text };
+type TokenType = variant { EXT; UNKOWN; ICRC1; ICRC2; DIP20 };
+service : (principal, principal) -> {
+  addLiquidity : (principal, nat, nat, nat, nat64) -> (nat, nat, nat);
+  addPrivateLiquidity : (principal, nat, nat, nat64) -> (nat, nat);
+  addStableLiquidity : (principal, nat, nat, nat, nat64) -> (nat, nat, nat);
+  createCommonPool : (
+      principal,
+      principal,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat64,
+      opt bool,
+    ) -> (Result);
+  createPrivatePool : (
+      principal,
+      principal,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat64,
+      opt bool,
+    ) -> (Result);
+  createStablePool : (
+      principal,
+      principal,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat,
+      nat64,
+      opt bool,
+    ) -> (Result);
+  cycles : () -> (nat64) query;
+  getMidPrice : (principal) -> (nat) query;
+  getPoolInfo : (principal, principal) -> (PoolInfo) query;
+  getPoolsInfo : (principal) -> (vec PoolInfo) query;
+  getSubaccount : () -> (Account) query;
+  getTimePrice : (principal) -> (nat) query;
+  get_deviation_rate : (nat, nat, principal, nat64) -> (Result_1) query;
+  get_mid_price_extra_decimals : (principal, nat8) -> (nat) query;
+  get_token_type_by_principal_with_refresh : (principal) -> (TokenType);
+  get_token_type_by_principal_without_refresh : (principal) -> (
+      TokenType,
+    ) query;
+  lockLiquidity : (principal, nat, nat64) -> (Result_2);
+  lockLiquidityV2 : (principal, nat, nat64) -> (Result_3);
+  queryAddShareBase : (nat, principal) -> (nat, nat, nat, nat) query;
+  queryAddShareQuote : (nat, principal) -> (nat, nat, nat, nat) query;
+  querySellBase : (principal, nat) -> (nat, nat, nat, RState, nat) query;
+  querySellQuote : (principal, nat) -> (nat, nat, nat, RState, nat) query;
+  querySellShares : (nat, principal, principal) -> (nat, nat, nat, nat) query;
+  quote : (principal, principal, nat, nat64) -> (Result_4) query;
+  resetParamPrivatePool : (principal, nat, nat, nat) -> ();
+  sellShares : (nat, principal, nat, nat, nat, nat64) -> (nat, nat);
+  swapTokenToToken : (
+      principal,
+      principal,
+      nat,
+      nat,
+      vec principal,
+      nat64,
+      nat64,
+    ) -> (Result_5);
+  transferLiquidity : (principal, principal, nat) -> (Result_2);
+  transferLiquidityV2 : (principal, principal, nat) -> (Result_3);
+  withdrawSubAccountToken : (principal, nat) -> (Result_2);
+}

@@ -1,0 +1,109 @@
+.pools {
+    margin: 0 auto;
+    margin-bottom: 40px;
+    margin-top: 40px;
+    width: 1000px;
+    background: #121935;
+    border-radius: 8px;
+
+    :global {
+        .ant-table-pagination-right {
+            justify-content: center;
+        }
+
+        td.ant-table-column-sort {
+            background: none;
+        }
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 48px;
+    padding: 0 30px 0 23px;
+    background: #1F2946;
+    border: 1px solid rgba(43, 55, 89, 1);
+    border-radius: 8px 8px 0px 0px;
+    color: #FFFFFF;
+    font-weight: 500;
+
+    .question {
+        color: #8B9AC9;
+    }
+
+    .officialtoken {
+        font-size: 16px;
+        color: #8B9AC9;
+        letter-spacing: 0;
+        font-weight: 400;
+    }
+
+    &-left {
+        font-size: 20px;
+    }
+
+    &-right {
+        :global {
+            .ant-radio-wrapper {
+                color: #fff;
+
+                &:hover {
+                    .ant-radio-inner {
+                        border-color: #7d6cf9;
+                    }
+                }
+            }
+
+            .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+                border-color: #7d6cf9;
+                background-color: #7d6cf9;
+            }
+        }
+    }
+}
+
+.table {
+    :global {
+        .ant-table-thead .ant-table-cell {
+            background: var(--dark-background-color) !important;
+            border-top: none;
+
+            &:first-child,
+            &:last-child {
+                border-left: none;
+            }
+        }
+    }
+
+    .tokenContainer {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        cursor: pointer;
+
+        .tokenIcon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: inline-block;
+            background: #efefef;
+        }
+
+        // .tokenIcon:last-child {
+        //     margin-left:-4px;
+        // }
+        .lastToken {
+            margin-left: -4px;
+        }
+
+        .tokenText {
+            display: inline-block;
+            margin-left: 8px;
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}

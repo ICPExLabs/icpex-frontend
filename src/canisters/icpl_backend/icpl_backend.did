@@ -1,0 +1,53 @@
+type Result = variant { Ok : principal; Err : text };
+type TokenInfo = record {
+  decimals : nat;
+  flat_fee : bool;
+  owner : principal;
+  logo : text;
+  name : text;
+  mint_on : bool;
+  platform_token_type : text;
+  burn_rate : nat;
+  fee_rate : nat;
+  address : principal;
+  flat_burn_fee : bool;
+  token_type : text;
+  total_supply : nat;
+  symbol : text;
+};
+type TokenSymbolInfo = record {
+  decimals : nat;
+  logo : text;
+  platform_token_type : text;
+  token_type : text;
+  symbol : text;
+};
+service : (principal, principal, nat, principal) -> {
+  checkToken : (principal, text) -> (TokenInfo);
+  createToken : (
+      text,
+      text,
+      text,
+      nat8,
+      nat,
+      nat,
+      bool,
+      nat,
+      bool,
+      bool,
+      text,
+      opt principal,
+    ) -> (Result);
+  cycles : () -> (nat64) query;
+  getMetadata : () -> (principal, principal, principal, nat) query;
+  getSymbolToken : (text) -> (TokenSymbolInfo) query;
+  getToken : (principal) -> (TokenInfo) query;
+  getTokenCnt : () -> (nat64) query;
+  getTokenIds : (nat64) -> (vec text) query;
+  getTokenInfo : () -> (vec TokenInfo) query;
+  getTokenLogo : (principal) -> (text) query;
+  getUserCreateTokenInfo : (principal) -> (vec TokenInfo) query;
+  getUserSubWallet : () -> (vec TokenInfo) query;
+  mintToken : (principal, principal, nat) -> ();
+  removeTokensControllers : (principal, opt principal) -> ();
+}

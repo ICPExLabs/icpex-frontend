@@ -1,0 +1,226 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    letter-spacing: 0;
+    width: 1000px;
+    margin: auto;
+    min-height: 48px;
+    padding: 10px 9px 10px 14px;
+    background: var(--dark-background-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 14px;
+    margin-top: 20px;
+
+    .headerLeft {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .coinContainer {
+        display: flex;
+        align-items: center;
+
+        .poolImgContainer {
+            display: flex;
+
+        }
+
+        .coinImage {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            border-radius: 50%;
+            background: #efefef;
+        }
+
+        .lastCoin {
+            margin-left: -4px;
+        }
+
+        .coinImage:last-child {
+            margin-left: -4px;
+        }
+
+        .coinName {
+            display: inline-block;
+            font-size: 20px;
+            color: #fff;
+            font-weight: 600;
+            text-align: center;
+            margin-left: 5px;
+        }
+    }
+
+    .rateContainer {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-left: -45px;
+
+        .rateCount {
+            font-size: 20px;
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 0;
+        }
+
+        .rateRatio {
+            font-size: 16px;
+            color: #8b9ac9;
+            letter-spacing: 0;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+
+        .increaseColor {
+            color: #36FF14;
+        }
+
+        .descreaseColor {
+            color: #FF4040;
+        }
+    }
+
+    .textContainer {
+        display: flex;
+        align-items: center;
+
+        .textContent {
+            display: inline-block;
+            margin-right: 5px;
+            margin-left: 10px;
+            font-size: 14px;
+            color: #5d52de;
+            font-weight: 500;
+        }
+
+        .poolTextContent {
+            margin-top: 10px;
+        }
+    }
+
+    .extraTokenStyle {
+        justify-content: space-around;
+        margin-left: -45px;
+    }
+
+    .extraPoolStyle {
+        flex: 1;
+    }
+
+    .btnContainer {
+        .swap {
+            width: 80px;
+        }
+
+        .add {
+            width: 120px;
+            border: 1px solid rgba(133, 114, 255, 1);
+            border-radius: 8px;
+
+            span {
+                color: #fff;
+            }
+        }
+    }
+
+    .tag {
+        margin-top: 6px;
+        width: 108px;
+        height: 24px;
+        background: var(--light-background-color);
+        border-radius: 2px;
+        text-align: center;
+        line-height: 24px;
+        color: var(--text-primary-color);
+        margin-left: 10px;
+    }
+
+    .transContainer {
+        display: flex;
+        align-items: start;
+
+        .transIcon {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+        }
+
+        .transText {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+    }
+}
+
+.poolHeader {
+    height: 101px;
+}
+
+.poolBtnStyle {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+}
+
+.poolContainer {
+    align-items: start !important;
+}
+
+.poolColumn {
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cycleContainer {
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: space-around;
+    border: 1px solid #8572ff;
+    border-radius: 4px;
+    height: 28px;
+    margin-left: -45px;
+    padding: 0 8px;
+
+    .cycleStyle {
+        display: inline-block;
+        // margin-top: 6px;
+        // margin-left: 10px;
+        color: #8b9ac9;
+        font-size: 16px;
+        font-weight: 500;
+    }
+
+    .addContainer {
+        cursor: pointer;
+
+        .addBtnStyle {
+            display: inline-block;
+            color: #8572ff;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .cycleDivider {
+            display: inline-block;
+            width: 1px;
+            height: 12px;
+            background: #506293;
+            margin-left: 13px;
+            margin-right: 7px;
+        }
+    }
+}
+
+.poolCycleContainer {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding: 0 12px;
+
+}
+
+.emptyCycles {
+    display: flex;
+    justify-content: space-around;
+}

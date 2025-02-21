@@ -1,0 +1,11 @@
+service : (principal, principal, principal, text) -> {
+  addICPLedgerAddr : (principal) -> (nat);
+  addICPPrice : (text) -> ();
+  cycles : () -> (nat64) query;
+  mannualRefreshAndGetPrice : (opt principal) -> (
+      vec record { principal; nat },
+      nat,
+      principal,
+    );
+  pricesBatch : (vec principal) -> (vec record { principal; nat }) query;
+}

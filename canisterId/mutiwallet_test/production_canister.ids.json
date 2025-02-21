@@ -1,0 +1,32 @@
+{
+  "icpl_backend": {
+    "ic": "xc22h-kyaaa-aaaam-abqdq-cai"
+  },
+  "icpl_faucet": {
+    "ic": "wpu6j-fqaaa-aaaam-abqea-cai"
+  },
+  "icpl_starter_assets": {
+    "ic": "24hea-maaaa-aaaag-akz6a-cai"
+  },
+  "icpl_icpl": {
+    "ic": "62u2u-yaaaa-aaaam-abrra-cai"
+  },
+  "icpl_oracle": {
+    "ic": "wtqey-sqaaa-aaaam-abqga-cai"
+  },
+  "icpl_router": {
+    "ic": "6uwx4-dqaaa-aaaam-abrqa-cai"
+  },
+  "icpl_transactions": {
+    "ic": "fxk4i-baaaa-aaaam-abhua-cai"
+  },
+  "icrc1_ledger": {
+    "ic": "qypgn-oaaaa-aaaam-abpuq-cai"
+  },
+  "xtc": {
+    "ic": "aanaa-xaaaa-aaaah-aaeiq-cai"
+  },
+  "icrc2_ledger": {
+    "ic": "3riug-3qaaa-aaaam-ab5ba-cai"
+  }
+}

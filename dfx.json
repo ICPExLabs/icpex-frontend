@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "dfx": "0.23.0",
+  "canisters": {
+    "dip20": {
+      "type": "custom",
+      "package": "dip20",
+      "build": "./build.sh dip20",
+      "candid": "src/dip20/dip20.did",
+      "wasm": "target/wasm32-unknown-unknown/release/dip20-opt.wasm"
+    },
+    "icpl_starter_assets": {
+      "dependencies": [],
+      "frontend": {
+        "entrypoint": "index.html"
+      },
+      "source": [
+        "dist","assets"
+      ],
+      "type": "assets"
+    },
+    "icpl_router": {
+      "type": "custom",
+      "package": "router",
+      "build": "./build.sh router",
+      "wasm": "target/wasm32-unknown-unknown/release/router-opt.wasm",
+      "candid": "src/pmmswap/router/router.did"
+    },
+    "icpl_icpl": {
+      "type": "custom",
+      "package": "icpl",
+      "build": "./build.sh icpl",
+      "candid": "src/icpl/icpl.did",
+      "wasm": "target/wasm32-unknown-unknown/release/icpl-opt.wasm"
+    },
+    "icpl_backend": {
+      "type": "custom",
+      "package": "backend",
+      "build": "./build.sh backend",
+      "wasm": "target/wasm32-unknown-unknown/release/backend-opt.wasm",
+      "candid": "src/backend/backend.did"
+    },
+    "icpl_oracle": {
+      "type": "custom",
+      "package": "oracle",
+      "build": "./build.sh oracle",
+      "wasm": "target/wasm32-unknown-unknown/release/oracle-opt.wasm",
+      "candid": "src/oracle/oracle.did",
+      "main": "src/oracle/main.rs"
+    },
+    "icpl_faucet": {
+      "type": "custom",
+      "package": "faucet",
+      "build": "./build.sh faucet",
+      "wasm": "target/wasm32-unknown-unknown/release/faucet-opt.wasm",
+      "candid": "src/faucet/faucet.did"
+    },
+    "icpl_transactions": {
+      "type": "custom",
+      "package": "transactions",
+      "build": "./build.sh transactions",
+      "wasm": "target/wasm32-unknown-unknown/release/transactions-opt.wasm",
+      "candid": "src/transactions/transactions.did"
+    },
+    "wicp": {
+      "type": "custom",
+      "package": "wicp",
+      "build": "./build.sh wicp",
+      "wasm": "target/wasm32-unknown-unknown/release/wicp-opt.wasm",
+      "candid": "src/wicp/wicp.did"
+    },
+    "xtc": {
+      "candid": "otherToken/candid/xtc.did",
+      "wasm": "otherToken/wasm/xtc-rel-opt.wasm",
+      "type": "custom"
+    },
+    "icrc1_ledger": {
+      "type": "custom",
+      "candid": "otherToken/candid/icrc1-ledger.did",
+      "wasm": "otherToken/wasm/icrc1-ledger.wasm"
+    },
+    "ledger": {
+      "type": "custom",
+      "candid": "otherToken/candid/ledger.public.did",
+      "wasm": "otherToken/wasm/ledger.wasm"
+    }
+  },
+  "defaults": {
+    "build": {
+      "packtool": "",
+      "args": ""
+    }
+  },
+  "networks": {
+    "ic": {
+      "providers": [
+        "https://icp-api.io/"
+      ],
+      "type": "persistent"
+    },
+    "testnet": {
+      "providers": [
+        "http://[2a00:fb01:400:42:5000:d1ff:fefe:987e]:8080"
+      ],
+      "type": "persistent"
+    },
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  }
+}

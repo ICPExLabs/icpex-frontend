@@ -1,0 +1,5 @@
+service : (principal, principal, principal) -> {
+  cycles : () -> (nat64) query;
+  retrieve : (principal, nat, principal) -> ();
+  transfer : (principal, principal, nat) -> ();
+}

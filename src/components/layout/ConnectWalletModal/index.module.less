@@ -1,0 +1,175 @@
+.wallet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+
+  img {
+    margin-left: 5px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:first-of-type {
+      margin-left: 8px;
+    }
+  }
+}
+
+.name {
+  position: relative;
+  padding: 0 0 0 8px;
+  color: #6a8eff;
+
+  &::before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    margin-top: -2px;
+    width: 4px;
+    height: 4px;
+    background-color: #6a8eff;
+    border-radius: 50%;
+    ;
+  }
+}
+
+.principal {
+  margin-left: 16px;
+  padding: 0 12px;
+  color: #8b9ac9;
+  line-height: 24px;
+  background: #1F2946;
+  border-radius: 2px;
+}
+
+.icp {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  border: 1px solid rgba(93, 82, 224, 1);
+  border-radius: 8px;
+  height: 56px;
+  color: #fff;
+
+  img {
+    width: 32px;
+    margin-right: 20px;
+  }
+
+  &-right {
+    font-size: 12px;
+  }
+}
+
+.icplogo {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.total {
+  color: #8b9ac9;
+}
+
+.actions {
+  margin-top: 70px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.action {
+  width: 100px;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.logo {
+  margin: 8px auto;
+  width: 40px;
+  height: 40px;
+  background: rgba(139, 154, 201, 0.25);
+  border-radius: 50%;
+  line-height: 40px;
+  color: red;
+}
+
+.walletContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  // padding-left: 10px;
+  // padding-right:15px;
+  padding: 10px;
+
+  &:hover {
+    background: #1f2946;
+    border-radius: 8px;
+    padding: 10px;
+
+    .iconName {
+      opacity: 1;
+    }
+  }
+
+  .iconWallet {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #8b9ac9;
+    opacity: 0.45;
+  }
+
+  .iconName {
+    font-size: 16px;
+    color: #fff;
+    opacity: 0.45;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 0;
+    display: inline-block;
+    margin-left: 12px;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .fillLogo {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.walletActive {
+  pointer-events: auto;
+}
+
+.walletContainer:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.service {
+  margin-bottom: 36px;
+  background: #1f2946;
+  border-radius: 8px;
+  padding: 10px;
+
+  .prefixTip {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 5px;
+  }
+
+  .readTip {
+    color: #ff4949;
+    font-weight: 500;
+  }
+}

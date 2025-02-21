@@ -1,0 +1,9 @@
+type Account = record { owner : principal; subaccount : opt blob };
+type Result = variant { Ok : vec record { principal; nat }; Err : text };
+type Result_1 = variant { Ok; Err : text };
+service : () -> {
+  airdrop : (vec record { principal; nat }, principal, text) -> (Result);
+  cycles : () -> (nat64) query;
+  getSubaccount : () -> (Account) query;
+  withdrawSubAccountToken : (principal) -> (Result_1);
+}

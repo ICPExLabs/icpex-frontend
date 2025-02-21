@@ -1,0 +1,215 @@
+.TablePhone {
+  display: none;
+}
+
+.transactions {
+  margin: 0 auto;
+  width: 860px;
+  background: #121935;
+  border-radius: 8px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 48px;
+  padding: 0 30px 0 23px;
+  background: #1F2946;
+  border: 1px solid rgba(43, 55, 89, 1);
+  border-radius: 8px 8px 0px 0px;
+  color: #FFFFFF;
+  font-weight: 500;
+
+  &-left {
+    font-size: 16px;
+  }
+
+  &-right {
+    :global {
+      .ant-radio-wrapper {
+        color: #fff;
+
+        &:hover {
+          .ant-radio-inner {
+            border-color: #7d6cf9;
+          }
+        }
+      }
+
+      .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+        border-color: #7d6cf9;
+        background-color: #7d6cf9;
+      }
+    }
+  }
+}
+
+.table {
+  :global {
+    .ant-table-thead .ant-table-cell {
+      background: var(--dark-background-color) !important;
+      border-top: none;
+
+      &:first-child,
+      &:last-child {
+        border-left: none;
+      }
+    }
+  }
+}
+
+@media (max-width:800px) {
+  .transactions {
+    margin: 0 auto;
+    width: unset;
+    background: #121935;
+    border-radius: 8px;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 87px;
+    padding: 0 30px 0 23px;
+    background: #1F2946;
+    border: 1px solid rgba(43, 55, 89, 1);
+    border-radius: 8px 8px 0px 0px;
+    color: #FFFFFF;
+    font-weight: 500;
+
+    &-left {
+      font-size: 16px;
+    }
+
+    &-right {
+      :global {
+        .ant-radio-wrapper {
+          color: #fff;
+
+          &:hover {
+            .ant-radio-inner {
+              border-color: #7d6cf9;
+            }
+          }
+        }
+
+        .ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+          border-color: #7d6cf9;
+          background-color: #7d6cf9;
+        }
+      }
+    }
+  }
+
+  .table {
+    display: none;
+  }
+
+  .TablePhone {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 10px 10px 10px 10px;
+    background: #121935;
+
+    .table {
+      :global {
+        .ant-table-thead {
+
+          tr:first-child,
+          tr:last-child {
+            border: 1px solid rgba(43, 55, 89, 1);
+          }
+
+          .ant-table-cell {
+            padding: 16px;
+            background: var(--light-background-color);
+            border-radius: 0 !important;
+            border-top: 1px solid rgba(43, 55, 89, 1);
+            border-bottom: 1px solid rgba(43, 55, 89, 1);
+
+            &:first-child {
+              border-left: 1px solid rgba(43, 55, 89, 1);
+            }
+
+            &:last-child {
+              border-right: 1px solid rgba(43, 55, 89, 1);
+            }
+          }
+        }
+
+        .ant-table-tbody {
+          .ant-table-cell {
+            padding: 16px;
+          }
+        }
+
+        .ant-table-cell {
+          border-color: #2B3759 !important;
+
+          &::before {
+            opacity: 0;
+          }
+        }
+
+        .ant-pagination-item {
+          background-color: var(--dark-background-color);
+          border-color: transparent;
+          color: #fff;
+
+          a {
+            color: rgba(255, 255, 255, 0.5);
+          }
+
+          &-active a {
+            color: rgba(255, 255, 255, 1);
+          }
+
+          &-link {
+            color: var(--dark-background-color)
+          }
+        }
+
+        .ant-select-selector {
+          background-color: var(--dark-background-color) !important;
+        }
+      }
+    }
+
+    .DataCard {
+      margin-top: 10px;
+      border-bottom: 1px solid rgba(51, 54, 84, 1);
+      padding-top: 3px;
+      padding-bottom: 3px;
+
+      .value {
+        margin-left: 10px;
+        opacity: 0.85;
+        font-size: 14px;
+        color: #FFFFFF;
+        letter-spacing: 0;
+        font-weight: 500;
+      }
+
+      .label {
+        font-size: 14px;
+        color: #8B9AC9;
+        letter-spacing: 0;
+        text-align: center;
+        font-weight: 500;
+      }
+
+      .Buttom {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    .DataCard:nth-child(1) {
+      padding-top: 0;
+    }
+  }
+}

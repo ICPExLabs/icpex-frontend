@@ -1,0 +1,72 @@
+type FeeInfo = record {
+  decimals : nat8;
+  flat_fee : bool;
+  burn_rate : nat;
+  fee_rate : nat;
+  flat_burn_fee : bool;
+  total_supply : nat;
+};
+type Metadata = record {
+  fee : nat;
+  decimals : nat8;
+  owner : principal;
+  logo : text;
+  name : text;
+  totalSupply : nat;
+  symbol : text;
+};
+type Result = variant { Ok : nat; Err : TxError };
+type TxError = variant {
+  InsufficientAllowance;
+  InsufficientBalance;
+  ErrorOperationStyle;
+  Unauthorized;
+  LedgerTrap;
+  ErrorTo;
+  Other;
+  BlockUsed;
+  AmountTooSmall;
+};
+service : (
+  text,
+  text,
+  text,
+  nat8,
+  nat,
+  principal,
+  principal,
+  nat,
+  bool,
+  nat,
+  principal,
+  bool,
+  bool,
+) -> {
+  allowance : (principal, principal) -> (nat) query;
+  approve : (principal, nat) -> (Result);
+  balanceOf : (principal) -> (nat) query;
+  cycles : () -> (nat64) query;
+  decimals : () -> (nat8) query;
+  getAllowanceSize : () -> (nat64) query;
+  getExtInfo : () -> (bool, bool, nat, principal) query;
+  getFee : (nat) -> (nat) query;
+  getFeeInfo : () -> (FeeInfo) query;
+  getHolders : (nat64, nat64) -> (vec record { principal; nat }) query;
+  getHoldersNum : () -> (nat64) query;
+  getMetadata : () -> (Metadata) query;
+  getUserApprovals : (principal) -> (vec record { principal; nat }) query;
+  logo : () -> (text) query;
+  mint : (principal, nat) -> (Result);
+  name : () -> (text) query;
+  owner : () -> (principal) query;
+  setBurnRate : (nat) -> ();
+  setFee : (nat) -> ();
+  setFeeTo : (principal) -> ();
+  setLogo : (text) -> ();
+  setName : (text) -> ();
+  setOwner : (principal) -> ();
+  symbol : () -> (text) query;
+  totalSupply : () -> (nat) query;
+  transfer : (principal, nat) -> (Result);
+  transferFrom : (principal, principal, nat) -> (Result);
+}

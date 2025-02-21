@@ -1,0 +1,34 @@
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    font-weight: 700;
+
+    &-item {
+        margin-right: 10px;
+        cursor: pointer;
+    }
+
+
+
+    &-item:hover {
+        color: #fff;
+    }
+
+    &-item-a {
+        // margin-right: 32px;
+        cursor: pointer;
+        color: var(--text-primary-color);
+        text-decoration: none;
+    }
+
+    &-item-a:hover {
+        color: #fff;
+    }
+}
+
+@media(min-width:800px) {
+    .menu {
+        display: none;
+    }
+}
