@@ -23,6 +23,10 @@ const items = [
   {
     label: "Contact",
   },
+  {
+    label: "AI",
+    href: "https://ai.icpex.org/",
+  },
 ];
 
 const Header: FC = () => {
