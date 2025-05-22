@@ -13,6 +13,8 @@ import ConnectWalletModal from "../ConnectWalletModal";
 import type { ConnectWalletModallRef } from "../ConnectWalletModal";
 
 import logoPng from "@/assets/logo.png";
+import newVersionPng from "@/assets/newVersion.png";
+import closePng from "@/assets/close.png";
 import deploymentPng from "@/assets/deployment.png";
 import transactionPng from "@/assets/transaction.png";
 import Airdrop from "@/assets/Airdrop.svg";
@@ -218,6 +220,8 @@ const LayoutHeader: FC = observer(() => {
     connectWalletModalRef.current?.showModal();
   };
 
+  const [isShowNewVersion, setIsShowNewVersion] = useState(true);
+
   return (
     <>
       <header className={styles.header}>
@@ -228,6 +232,31 @@ const LayoutHeader: FC = observer(() => {
             </a>
             <div className={styles.menu}>{Meuns}</div>
           </div>
+          <div className={styles.newVersionBox}>
+            <a
+              href="https://next.icpex.org/"
+              target="_blank"
+              className={styles.newVersion}
+            >
+              Return new version
+            </a>
+            {isShowNewVersion && (
+              <div className={styles.newVersionTip}>
+                <img className={styles.bg} src={newVersionPng} alt="" />
+                <img
+                  onClick={() => {
+                    setIsShowNewVersion(false);
+                  }}
+                  className={styles.close}
+                  src={closePng}
+                  alt=""
+                />
+
+                <p>Click here to experience the new version</p>
+              </div>
+            )}
+          </div>
+
           <div className={styles.right}>
             {appStore.userId ? (
               <div className={styles.connect} onClick={openModal}>
